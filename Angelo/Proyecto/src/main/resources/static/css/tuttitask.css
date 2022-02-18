@@ -1,0 +1,109 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+	text-align:center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.container {
+	background: linear-gradient(#7B2CBF,#5A189A,#3C096C,#240046,#10002B);
+}
+.namePage {
+    display: inline-block;
+}
+.namePage h1 {
+    display: inline-block;
+    color:#5A189A;
+    -webkit-text-stroke: 2px #C77DFF;
+    font-size: 5rem ;
+    margin-top: 40px;
+    margin-bottom: 6rem;
+}
+
+.spinning {
+    animation: spinner 2s linear;
+  }
+  
+  @keyframes spinner {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+a{
+    margin: 5rem;
+    font-size: 19px;
+    text-decoration: none;
+    color: white;
+}
+
+a.registerUser {
+    border: 3px solid #5A189A;
+    border-radius: 22px;
+    padding: 13px 19px;
+}
+a.registerUser:hover {
+    opacity: 0.4;
+}
+
+a.registerAdmin {
+    border: 3px solid #5A189A;
+    border-radius: 22px;
+    padding: 13px;
+}
+
+a.registerAdmin:hover {
+    opacity: 0.4;
+}
+
+hr {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border: 0;
+}
+
+button {
+    margin: 2rem 10rem ;
+    padding: 10px 20px;
+    border-radius: 10px;
+    background-color: #7B2CBF;
+    /*text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #C77DFF, 0 0 40px #C77DFF,
+    0 0 50px #C77DFF, 0 0 60px #C77DFF, 0 0 70px #C77DFF; */
+    -webkit-box-shadow: 2px 2px 5px black;
+    -moz-box-shadow: 2px 2px 5px black;
+    filter: shadow(color=black, direction=135, strength=2);
+}
+
+button:hover {
+    opacity: 0.7;
+}
+
+.mission {
+    color: white;
+}
+.mission h2 {
+    display: inline-block;
+    text-shadow: 0 0 13px #fff, 0 0 5px #fff, 0 0 23px #c77dff, 0 0 26px #c77dff, 0 0 5px #c77dff, 0 0 15px #c77dff, 0 0 7px #c77dff;
+    font-size: 2rem;
+    -webkit-text-stroke: 2px #C77DFF;
+}
+.mission p {
+    margin:30px 80px ;
+}
+footer{
+    border-top: 2px solid #3C096C;
+    padding: 18px;
+    text-align: center;
+}
+footer a{
+    color: #C77DFF;
+    padding: 0 9px;
+    font-size: 1rem;
+    text-decoration: none;
+}
+footer a:hover {
+    opacity: 0.4;
+}

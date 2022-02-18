@@ -14,10 +14,10 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
 import javax.persistence.PrePersist;
 import javax.persistence.PreUpdate;
 import javax.persistence.Table;
-import javax.validation.constraints.Size;
 import javax.persistence.Transient;
 
 
@@ -49,6 +49,17 @@ public class User {
 			inverseJoinColumns= @JoinColumn(name="role_id")
 			)
 	private List<Role> roles;
+	
+	@ManyToMany( fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+	@JoinTable(
+			name="users_Tareas",
+			joinColumns = @JoinColumn(name="user_id"),
+			inverseJoinColumns= @JoinColumn(name="tarea_id")
+			)
+	private List<Tareas> tareas;
+	
+	@OneToMany(mappedBy = "usuarioCreador", fetch = FetchType.LAZY)
+	private List<Tareas> TareasDelUsuario;
 	
 
 	@Column(updatable = false)
@@ -116,6 +127,19 @@ public class User {
 	public void setUpdatedAt(Date updatedAt) {
 		this.updatedAt = updatedAt;
 	}
+	public List<Tareas> getTareas() {
+		return tareas;
+	}
+	public void setTareas(List<Tareas> tareas) {
+		this.tareas = tareas;
+	}
+	public List<Tareas> getTareasDelUsuario() {
+		return TareasDelUsuario;
+	}
+	public void setTareasDelUsuario(List<Tareas> tareasDelUsuario) {
+		TareasDelUsuario = tareasDelUsuario;
+	}
+	
     
     
 }

@@ -13,9 +13,9 @@
 		<div style="width: 35rem;">
 	<h1>Registrarse!</h1>
     
-    <p><form:errors path="user.*"/></p>
+    <p><form:errors path="admin.*"/></p>
     
-    <form:form  method="POST" action="/registrar" modelAttribute="user">
+    <form:form  method="POST" action="/registrar" modelAttribute="admin">
         <div class="row">
 	         <p class="col">
 	            <form:label class="form-label" path="name">Nombre :</form:label>

@@ -5,11 +5,13 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
+import proyecto.models.Role;
 import proyecto.models.User;
 import proyecto.repositories.UserRepository;
 
@@ -32,12 +34,11 @@ public class UserDetailsServiceImplementation implements UserDetailsService{
 	}
 	
 	private List<GrantedAuthority> getAuthorities(User user){
-        List<GrantedAuthority> authorities = new ArrayList<GrantedAuthority>();
-//        for(Permisos permiso : user.getPermisos()) {
-//            GrantedAuthority grantedAuthority = new SimpleGrantedAuthority(permiso.getName());
-//            authorities.add(grantedAuthority);
-//        }
-        return authorities;
-    }
-
+	      List<GrantedAuthority> authorities = new ArrayList<GrantedAuthority>();
+	        for(Role role : user.getRoles()) {
+	            GrantedAuthority grantedAuthority = new SimpleGrantedAuthority(role.getName());
+	            authorities.add(grantedAuthority);
+	        }
+	        return authorities;
+	    }
 }
