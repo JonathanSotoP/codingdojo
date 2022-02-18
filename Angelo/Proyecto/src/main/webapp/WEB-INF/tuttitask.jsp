@@ -1,17 +1,18 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<link rel="stylesheet" type="text/css" href="src/main/resources/static/css/tuttitask.css">
+		<link rel="stylesheet" type="text/css" href="/css/tuttitask.css">
 		<title>TuttiTask</title>
 	</head>
 	<body>
 		<div class= "container">
 			<div class="namePage">
 				<h1>Tutti-Task</h1>
-				<img class="spinning" src="src/main/resources/static/css/LogoTuttiTask.png" alt="logo" width="100px">
+				<img class="spinning" src="/css/LogoTuttiTask.png" alt="logo" width="100px">
 			</div>
 			
 				<hr>
@@ -32,9 +33,9 @@
 
 			<footer>
 				<div class="social">
-					<a href="#">Facebook</a>
-					<a href="#">Instagram</a>
-					<a href="#">Twitter</a>
+					<a  target="_blank" href="https://www.facebook.com/profile.php?id=100077987547848">Facebook</a>
+					<a href="">Instagram</a>
+					<a target="_blank" href="https://twitter.com/TuttiTask">Twitter</a>
 				</div>
 			</footer>
 		</div>

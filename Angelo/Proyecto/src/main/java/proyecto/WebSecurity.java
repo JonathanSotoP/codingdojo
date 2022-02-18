@@ -26,7 +26,7 @@ public class WebSecurity  extends WebSecurityConfigurerAdapter{
 		
 		http.
 			authorizeRequests()
-				.antMatchers("/static/**", "/tuttitask","/registerAdmin","/registerUser","/login","/registrarUsuario","/registrar").permitAll()
+				.antMatchers("/static/**","/css/**", "/tuttitask","/registerAdmin","/registerUser","/login","/registrarUsuario","/registrar").permitAll()
 				.antMatchers("/admin/**").access("hasRole('ADMIN')")
 				.anyRequest().authenticated()
 				.and()
@@ -36,6 +36,7 @@ public class WebSecurity  extends WebSecurityConfigurerAdapter{
 				.permitAll()
 				.and()
 			.logout()
+				.logoutSuccessUrl("/tuttitask")
 				.permitAll();
 	}
 	

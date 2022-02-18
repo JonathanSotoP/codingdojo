@@ -6,46 +6,37 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 		<title>Registro administrador</title>
+        <link rel="stylesheet" type="text/css" href="/css/login.css">
 	</head>
 	<body>
-		<div style="width: 35rem;">
-	<h1>Registrarse!</h1>
-    
-    <p><form:errors path="admin.*"/></p>
-    
-    <form:form  method="POST" action="/registrar" modelAttribute="admin">
-        <div class="row">
-	         <p class="col">
-	            <form:label class="form-label" path="name">Nombre :</form:label>
-	            <form:input type="name"  class="form-control" path="name"/>
-	        </p>
-	          <p class="col">
-	            <form:label class="form-label" path="lastName">Apellido :</form:label>
-	            <form:input type="lastName" class="form-control" path="lastName"/>
-	        </p>
-	     </div>
-	     <div class="row">   
-	        <p class="col">
-	            <form:label class="form-label" path="email">Email:</form:label>
-	            <form:input type="email" class="form-control" path="email"/>
-	        </p>  
-	    </div>
-	    <div class="row">    	
-	        <p class="col">
-	            <form:label path="password">Contraseña :</form:label>
-	            <form:password  class="form-control" path="password"/>
-	        <p class="col">
-	        <p>
-	            <form:label path="passwordConfirm">Confirme su Contraseña :</form:label>
-	            <form:password  class="form-control" path="passwordConfirm"/>
-	        </p>
-	    </div>    
+		<div class="namePage">
+			<h1>Tutti-Task</h1>
+			<img class="spinning" src="/css/LogoTuttiTask.png" alt="logo" width="100px">
+		</div>
+		<p><form:errors path="admin.*"/></p>
+		<div class="container" >
+            <h1 class="registro">Registro</h1>
+			<form:form  method="POST" action="/registrar" modelAttribute="admin">
+				<form:label class="form-label" path="name">Nombre :</form:label>
+	            <form:input class="l" placeholder="Nombres" type="text" id="nombre" name="username" path="name"/>
+
+	    
+				<form:label class="form-label" path="email">Email:</form:label>
+	            <form:input class="l" placeholder="Ingrese su correo Electronico" type="email" id="email" name="username" path="email"/>
+	    
+				<form:label path="password">Contraseña :</form:label>
+	            <form:password  class="l"  id="password"   path="password"/>
+
+
+				<form:label path="passwordConfirm"> Confirme su Contraseña :</form:label>
+                <form:password  class="l" id="password confirm"  path="passwordConfirm"/>
+	        
+	    
 	       
-	        <input class="btn-primary" type="submit" value="Registrar!"/>
-    </form:form>
-	</div>
+	        <input class="btn" type="submit" value="Registrarse"/>
+		</form:form>
+	    </div>
 		
 	
 	</body>

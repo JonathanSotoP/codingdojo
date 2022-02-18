@@ -100,7 +100,7 @@ public class MainController {
 	@GetMapping("/admin/tareas/{id}")
 	public String mostrarTarea(Principal principal, @PathVariable("id")long id, Model model) {
 //		String Username = principal.getName();
-		model.addAttribute("Tarea", tareaService.encontrarPorId(id));
+		model.addAttribute("tarea", tareaService.encontrarPorId(id));
 		//model.addAttribute("usuarioActual", userService.findByEmail(Username));
 		return"mostrarTarea.jsp";
 	}
