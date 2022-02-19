@@ -24,4 +24,6 @@ public interface TareasService {
 
 	List<Tareas> EncontrarPorCreador(User user);
 
+	Tareas añadirUsuario(Long tareaId, long usuarioId);
+
 }

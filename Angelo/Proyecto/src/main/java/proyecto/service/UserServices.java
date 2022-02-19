@@ -10,7 +10,7 @@ public interface UserServices {
 
 	User findByEmail(String email);
 
-//	User AñadirTarea(long idTarea, long idUser);
+
 
 
 	List<User> listaDeUsuarios();

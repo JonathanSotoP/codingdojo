@@ -35,21 +35,16 @@ public class TareasServiceImp implements TareasService{
 	}
 	
 		
-//	}
-//	@Override
-//	public List<Tareas> TareasSinUsuarios(long id){
-//		List<Long> ids = new ArrayList<Long>();
-//		User u = userService.encontrarPorId(id);
-//		if(!u.getTareas().isEmpty()) {
-//			for(Tareas t: u.getTareas()) {
-//				ids.add(t.getId());
-//			}
-//		return(List<Tareas>)tareaRepo.findByIdnotIn(ids);
-//		}
-//		else {
-//			return listaTareas();
-//		}
-//	}
+	@Override
+	@Transactional
+	public Tareas añadirUsuario(Long tareaId, long usuarioId) {
+		User usuario = userService.encontrarPorId(usuarioId);
+		Tareas tarea = this.encontrarPorId(tareaId);
+		tarea.getUsuarios().add(usuario);
+		return this.tareaRepo.save(tarea);
+		
+	}
+	
 	
 	@Override
 	public Tareas encontrarPorId(long id){
